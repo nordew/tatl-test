@@ -26,7 +26,6 @@ func (s *authService) VerifyAPIKey(ctx context.Context, apiKey string) error {
 
 	log := s.logger.With(
 		slog.String("op", op),
-		slog.String("apiKey", apiKey),
 	)
 
 	if err := s.authStorage.VerifyAPIKey(ctx, apiKey); err != nil {
